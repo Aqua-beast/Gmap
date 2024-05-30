@@ -10,7 +10,7 @@ const app  = express();
 dotenv.config();
 
 app.use(cors({
-    origin: "https://gmap-one.vercel.app", 
+    origin: "https://gmap-neon.vercel.app", 
 }))
 
 app.use(express.json());
