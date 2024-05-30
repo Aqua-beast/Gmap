@@ -10,7 +10,7 @@ const app  = express();
 dotenv.config();
 
 app.use(cors({
-    origin: "http://localhost:3000", 
+    origin: "https://gmap-eta.vercel.app", 
 }))
 
 app.use(express.json());
