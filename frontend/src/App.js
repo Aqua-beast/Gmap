@@ -61,7 +61,7 @@ export default function App() {
       fetchPopups();
       // console.log(state.popups);
     }
-  }, []);
+  }, [state.username, state.popups]);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
