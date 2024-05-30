@@ -19,7 +19,7 @@ import { Icon, divIcon, point } from "leaflet";
 import { useEffect, useState } from "react";
 import Auth from "./Components/Auth";
 
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
@@ -61,7 +61,7 @@ export default function App() {
       fetchPopups();
       console.log(state.popups);
     }
-  }, [state.username]);
+  }, [state.username, state.popups]);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -109,11 +109,13 @@ export default function App() {
 
   return (
     <>
+    <ToastContainer />
       <Auth
         state={state}
         dispatch={dispatch}
         setEmail={setEmail}
         setName={setName}
+        setPopup={setPopup}
       />
       <MapContainer
         className="leaflet-container"

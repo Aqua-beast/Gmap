@@ -2,17 +2,16 @@ import React, { useEffect, useState } from "react";
 import { IoIosClose } from "react-icons/io";
 import "./Auth.css";
 import axios from "axios";
+import { toast } from "react-toastify";
 
-
-function Auth({state, dispatch, setEmail, setName}) {
-  
+function Auth({ state, dispatch, setEmail, setName, setPopup }) {
   const [auth, setAuth] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showButton, setShowButton] = useState(true);
-  useEffect(()=>{
-    console.log(state)
-  },[state])
+  useEffect(() => {
+    console.log(state);
+  }, [state]);
   function LoginComponent() {
     const [formData, setFormData] = useState({
       email: "",
@@ -34,11 +33,18 @@ function Auth({state, dispatch, setEmail, setName}) {
       e.preventDefault();
       // console.log("Signup data:", formData);
       try {
-        const res = await axios.post("https://gmap-server.vercel.app/api/login", formData);
-        setAuth(true);
-        setShowLogin(false);
+        const res = await axios.post(
+          "https://gmap-server.vercel.app/api/login",
+          formData
+        );
+
         dispatch(setEmail(res.data.data.email));
         dispatch(setName(res.data.data.username));
+        toast(res.data.message);
+        setTimeout(() => {
+          setAuth(true);
+          setShowLogin(false);
+        }, [3000]);
       } catch (err) {
         console.log(err.message);
         SetErrMessage(err.message);
@@ -49,6 +55,9 @@ function Auth({state, dispatch, setEmail, setName}) {
     const LoginClose = () => {
       setShowLogin(false);
       setShowButton(true);
+      dispatch(setEmail(""));
+      dispatch(setName(""));
+      dispatch(setPopup([]));
     };
 
     return (
@@ -62,12 +71,7 @@ function Auth({state, dispatch, setEmail, setName}) {
         <form>
           <div>
             <label htmlFor="email">Email:</label>
-            <input
-              onChange={handleChange}
-              type="email"
-              name="email"
-              required
-            />
+            <input onChange={handleChange} type="email" name="email" required />
           </div>
           <div>
             <label htmlFor="password">Password:</label>
@@ -80,7 +84,7 @@ function Auth({state, dispatch, setEmail, setName}) {
           </div>
           <button type="submit">Login</button>
         </form>
-        <p className={errClass?'err':'success'}>{errMessage}</p>
+        <p className={errClass ? "err" : "success"}>{errMessage}</p>
       </div>
     );
   }
@@ -106,13 +110,20 @@ function Auth({state, dispatch, setEmail, setName}) {
       e.preventDefault();
       console.log("Signup data:", formData);
       try {
-        const res = await axios.post("https://gmap-server.vercel.app/api/register", formData);
-        setShowSignup(false);
-        setShowLogin(true);
+        const res = await axios.post(
+          "https://gmap-server.vercel.app/api/register",
+          formData
+        );
+        toast(res.data.message);
+
+        setTimeout(() => {
+          setShowSignup(false);
+          setShowLogin(true);
+        }, [3000]);
       } catch (err) {
         console.log(err.message);
         SetErrMessage(err.message);
-        setErrClass(true)
+        setErrClass(true);
       }
     };
 
@@ -159,7 +170,7 @@ function Auth({state, dispatch, setEmail, setName}) {
           </div>
           <button type="submit">Sign Up</button>
         </form>
-        <p className={errClass?'err':'success'}>{errMessage}</p>
+        <p className={errClass ? "err" : "success"}>{errMessage}</p>
       </div>
     );
   }
