@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap");
 
 * {
   box-sizing: border-box;
@@ -59,3 +59,48 @@
       border-bottom: 100px solid green;
   }
 } */
+
+.cluster-icon {
+  background-color: #333;
+  height: 2em;
+  width: 2em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0px 5px #fff;
+}
+
+.form-place {
+  display: grid;
+  grid-template-columns: 100px 200px;
+}
+
+.form-place > input {
+  padding: 5px;
+  font-size: 1em;
+}
+
+.form-place > button {
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.form-place > button:hover {
+  background-color: black;
+  color: white;
+}
+
+.form-place > label {
+  margin-right: 10px;
+}
+
+.close {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
