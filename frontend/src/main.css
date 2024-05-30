@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu Sans Mono", monospace;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  font-family: sans-serif;
+  color: #333;
+  background: linear-gradient(rgb(42, 114, 201), rgb(86, 180, 86));
+}
+
+/* height of the container */
+.leaflet-container {
+  height: 85vh;
+  width: 90%;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+/* 
+.animation {
+  height: 80vh;
+  width: 80vh;
+  background: white;
+  animation-name: shapeChange;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  top: auto;
+  left: auto;
+}
+
+@keyframes shapeChange {
+  40%{
+      background: blue;
+      scale: 1.2;
+      rotate: 180deg;
+      border-radius: 50%;
+  }
+  80%{
+      scale: 1;
+      rotate: 360deg;
+      height: 0;
+      width: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid green;
+  }
+} */

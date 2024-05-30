@@ -1,0 +1,96 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    padding: 1rem;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    z-index: 10;
+  }
+  
+  .auth-container-1 {
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 2px black;
+    padding: 1rem;
+    border: 1px solid black;
+  }
+
+  .auth-container-1 > button {
+    padding: 5px;
+    border-radius: 3px;
+  }
+
+  .auth-container-1 > button:hover {
+    background-color: black;
+    color: #f0f0f0;
+  }
+  
+  .signup-box, .login-box {
+    display: none;
+    top: 50px;
+    left: 50px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .signup-box form, .login-box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  
+  .signup-box form div, .login-box form div {
+    margin-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .signup-box form label, .login-box form label {
+    margin-right: 10px;
+    grid-column: 1/2;
+  }
+  
+  .signup-box form input, .login-box form input {
+    padding: 5px;
+    font-size: 1em;
+    grid-column: 2/4;
+  }
+  
+  .signup-box form button, .login-box form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  
+  .signup-box form button:hover, .login-box form button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .err {
+    color: red;
+  }
+
+  .success {
+    color: green;
+  }
+
+  .signup-box p, .login-box p {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  
+
+  /* Show the boxes when the state is true */
+  .show {
+    display: block;
+  }
+  
