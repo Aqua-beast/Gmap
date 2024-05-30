@@ -50,7 +50,7 @@ export default function App() {
         `https://gmap-server.vercel.app/api/user/${state.email}`
       );
       dispatch(setPopup(res.data.data));
-      // console.log(res.data.data);
+      console.log(res.data.data);
     } catch (err) {
       console.log(err);
     }
