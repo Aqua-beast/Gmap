@@ -50,7 +50,7 @@ export default function App() {
         `https://gmap-server.vercel.app/api/user/${state.email}`
       );
       dispatch(setPopup(res.data.data));
-      console.log(res.data.data);
+      // console.log(res.data.data);
     } catch (err) {
       console.log(err);
     }
@@ -59,9 +59,9 @@ export default function App() {
   useEffect(() => {
     if (state.username) {
       fetchPopups();
-      console.log(state.popups);
+      // console.log(state.popups);
     }
-  }, [state.username, state.popups]);
+  }, []);
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     title: "",

@@ -9,9 +9,7 @@ function Auth({ state, dispatch, setEmail, setName, setPopup }) {
   const [showLogin, setShowLogin] = useState(false);
   const [showSignup, setShowSignup] = useState(false);
   const [showButton, setShowButton] = useState(true);
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
+  
   function LoginComponent() {
     const [formData, setFormData] = useState({
       email: "",
