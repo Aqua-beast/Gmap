@@ -186,6 +186,7 @@ function Auth({ state, dispatch, setEmail, setName, setPopup }) {
   const handleLogout = () => {
     dispatch(setEmail(""));
     dispatch(setName(""));
+    dispatch(setPopup([]));
     setAuth(false);
     setShowButton(true);
   };
