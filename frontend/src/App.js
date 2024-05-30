@@ -105,7 +105,7 @@ export default function App() {
       />
       <MapContainer
         className="leaflet-container"
-        center={[48.4566, 2.3522]}
+        center={[28.598994891328356, 77.20516517210228]}
         zoom={13}
       >
         {/* OPEN STREEN MAPS TILES */}
