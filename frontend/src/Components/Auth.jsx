@@ -34,7 +34,7 @@ function Auth({state, dispatch, setEmail, setName}) {
       e.preventDefault();
       // console.log("Signup data:", formData);
       try {
-        const res = await axios.post("http://localhost:3011/api/login", formData);
+        const res = await axios.post("https://gmap-server.vercel.app/api/login", formData);
         setAuth(true);
         setShowLogin(false);
         dispatch(setEmail(res.data.data.email));
@@ -106,7 +106,7 @@ function Auth({state, dispatch, setEmail, setName}) {
       e.preventDefault();
       console.log("Signup data:", formData);
       try {
-        const res = await axios.post("http://localhost:3011/api/register", formData);
+        const res = await axios.post("https://gmap-server.vercel.app/api/register", formData);
         setShowSignup(false);
         setShowLogin(true);
       } catch (err) {

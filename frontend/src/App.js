@@ -35,7 +35,7 @@ export default function App() {
   const fetchPopups = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3011/api/user/${state.email}`
+        `https://gmap-server.vercel.app/api/user/${state.email}`
       );
       dispatch(setPopup(res.data.data));
       console.log(res.data.data);
@@ -73,7 +73,7 @@ export default function App() {
     // console.log(dataToSubmit);
     try {
       const res = await axios.post(
-        "http://localhost:3011/api/new",
+        "https://gmap-server.vercel.app/api/new",
         dataToSubmit
       );
       // console.log(res.data);
